@@ -1,0 +1,3 @@
+[submodule "apps/pkm-chain-athon"]
+	path = apps/pkm-chain-athon
+	url = https://github.com/Jakob-Muel/Pkm-Infinite-Fights.git
