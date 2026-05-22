@@ -1,0 +1,392 @@
+/* ─────────────────────────────────────────────
+   Tokens
+───────────────────────────────────────────── */
+:root {
+  --bg:      #fdfcf7;
+  --text:    #1a1a1a;
+  --muted:   #6b6b6b;
+  --accent:  #3b6ea5;
+  --border:  #e0ded6;
+
+  --col-width: 680px;
+  --side-pad:  1.25rem;
+
+  --font-body:  Georgia, 'Times New Roman', Times, serif;
+  --font-mono:  'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
+/* ─────────────────────────────────────────────
+   Reset & base
+───────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─────────────────────────────────────────────
+   Centred column
+───────────────────────────────────────────── */
+.col {
+  width: 100%;
+  max-width: var(--col-width);
+  margin-inline: auto;
+  padding-inline: var(--side-pad);
+}
+
+/* ─────────────────────────────────────────────
+   Navigation
+───────────────────────────────────────────── */
+header {
+  padding-block: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+header .col {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.site-title {
+  font-size: 1rem;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.site-title:hover {
+  color: var(--accent);
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+nav a {
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+  color: var(--accent);
+}
+
+/* ─────────────────────────────────────────────
+   Main content
+───────────────────────────────────────────── */
+main {
+  flex: 1;
+  padding-block: 3rem 4rem;
+}
+
+/* ─────────────────────────────────────────────
+   Footer
+───────────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--border);
+  padding-block: 1.5rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* ─────────────────────────────────────────────
+   Typography
+───────────────────────────────────────────── */
+h1, h2, h3, h4 {
+  line-height: 1.25;
+  font-weight: normal;
+}
+
+h1 { font-size: 1.75rem; margin-bottom: 0.75rem; }
+h2 { font-size: 1.35rem; margin-bottom: 0.6rem; margin-top: 2.5rem; }
+h3 { font-size: 1.1rem;  margin-bottom: 0.5rem; margin-top: 1.75rem; }
+
+p { margin-bottom: 1.25rem; }
+p:last-child { margin-bottom: 0; }
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+a:hover { text-decoration-thickness: 2px; }
+
+strong { font-weight: bold; }
+em     { font-style: italic; }
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: #f0efe8;
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+}
+
+pre {
+  background: #f0efe8;
+  padding: 1rem 1.25rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin-bottom: 1.25rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+blockquote {
+  border-left: 3px solid var(--border);
+  margin-left: 0;
+  padding-left: 1.25rem;
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 1.25rem;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin-block: 2.5rem;
+}
+
+/* ─────────────────────────────────────────────
+   Page intro (used on landing + section pages)
+───────────────────────────────────────────── */
+.page-intro {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2.5rem;
+}
+
+.page-intro p {
+  color: var(--muted);
+}
+
+/* ─────────────────────────────────────────────
+   Project cards
+───────────────────────────────────────────── */
+.project-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.project-card {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.5rem;
+}
+
+.project-card h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.project-card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+  list-style: none;
+}
+
+.tag {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  background: #f0efe8;
+  padding: 0.2em 0.5em;
+  border-radius: 3px;
+  color: var(--muted);
+}
+
+.card-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-family: var(--font-body);
+  padding: 0.45em 1em;
+  border-radius: 3px;
+  text-decoration: none;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  transition: background 0.15s, color 0.15s;
+}
+
+.btn:hover {
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn.primary:hover {
+  background: #2f5a8a;
+  border-color: #2f5a8a;
+}
+
+/* ─────────────────────────────────────────────
+   Blog list
+───────────────────────────────────────────── */
+.post-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.post-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding-block: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-list li:last-child {
+  border-bottom: none;
+}
+
+.post-date {
+  font-size: 0.8rem;
+  color: var(--muted);
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  flex-shrink: 0;
+}
+
+.post-list a {
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.post-list a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ─────────────────────────────────────────────
+   Blog post body
+───────────────────────────────────────────── */
+.post-header {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+
+.post-header h1 {
+  margin-bottom: 0.5rem;
+}
+
+.post-meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+}
+
+.post-body { }
+.post-body > * + * { margin-top: 1.25rem; }
+.post-body ul, .post-body ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.post-body li { margin-bottom: 0.3rem; }
+.post-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 3px;
+}
+
+/* ─────────────────────────────────────────────
+   Music page
+───────────────────────────────────────────── */
+.music-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.music-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.95rem;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.music-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.music-link .platform {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-left: auto;
+  font-family: var(--font-mono);
+}
+
+/* ─────────────────────────────────────────────
+   404 page
+───────────────────────────────────────────── */
+.error-page {
+  text-align: center;
+  padding-block: 6rem 4rem;
+}
+
+.error-page h1 {
+  font-size: 4rem;
+  color: var(--border);
+  margin-bottom: 0.5rem;
+}

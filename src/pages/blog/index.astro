@@ -1,0 +1,35 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-GB', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
+}
+---
+
+<Layout title="Blog" description="Writing by Jakob Müller.">
+  <div class="page-intro">
+    <h1>Blog</h1>
+    <p>Things I've written.</p>
+  </div>
+
+  {posts.length === 0 ? (
+    <p style="color:var(--muted)">No posts yet. Check back soon.</p>
+  ) : (
+    <ul class="post-list">
+      {posts.map(post => (
+        <li>
+          <span class="post-date">{formatDate(post.data.date)}</span>
+          <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+        </li>
+      ))}
+    </ul>
+  )}
+</Layout>

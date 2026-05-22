@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Projects"
+  description="Apps built by Jakob Müller — PkmChain-athon and QuiznessBusiness."
+>
+  <div class="page-intro">
+    <h1>Projects</h1>
+    <p>Apps I've built. More in the works.</p>
+  </div>
+
+  <div class="project-grid">
+
+    <!-- ── PkmChain-athon ── -->
+    <article class="project-card">
+      <h2>PkmChain-athon</h2>
+      <p>
+        A browser-based Pokémon stat-battle game — think Top Trumps, Gen 1
+        only. Pure HTML, CSS, and vanilla JS. Includes a live leaderboard
+        powered by Supabase.
+      </p>
+      <ul class="tag-list">
+        <li class="tag">HTML</li>
+        <li class="tag">CSS</li>
+        <li class="tag">JavaScript</li>
+        <li class="tag">Supabase</li>
+      </ul>
+      <div class="card-links">
+        <a class="btn primary" href="/pkm-chain-athon/" target="_self">Play</a>
+        <a class="btn" href="https://github.com/Jakob-Muel/Pkm-Infinite-Fights" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </article>
+
+    <!-- ── QuiznessBusiness ── -->
+    <article class="project-card">
+      <h2>QuiznessBusiness</h2>
+      <p>
+        A Sporcle-style "name them all" quiz app. Built with Next.js, TypeScript,
+        Tailwind, and Supabase. How many can you get before the clock runs out?
+      </p>
+      <ul class="tag-list">
+        <li class="tag">Next.js</li>
+        <li class="tag">TypeScript</li>
+        <li class="tag">Tailwind</li>
+        <li class="tag">Supabase</li>
+      </ul>
+      <div class="card-links">
+        <a class="btn primary" href="https://quizness-business.vercel.app/" target="_blank" rel="noopener">Open app</a>
+        <a class="btn" href="https://github.com/Jakob-Muel/QuiznessBusiness" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </article>
+
+  </div>
+</Layout>
