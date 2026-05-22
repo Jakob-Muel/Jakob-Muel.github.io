@@ -44,6 +44,9 @@ const pageTitle = title === 'Home' ? 'Jakob Müller' : `${title} · Jakob Mülle
     <title>{pageTitle}</title>
   </head>
   <body>
+    <div class="wip-banner">
+      🚧 Work in Progress — this site is still being built. Things may be incomplete or change.
+    </div>
     <header>
       <div class="col">
         <a href="/" class="site-title">Jakob Müller</a>
@@ -71,4 +74,16 @@ const pageTitle = title === 'Home' ? 'Jakob Müller' : `${title} · Jakob Mülle
 
 <style is:global>
   @import '../styles/global.css';
+</style>
+
+<style>
+  .wip-banner {
+    background: #fff8e1;
+    border-bottom: 1px solid #f0c040;
+    color: #7a5800;
+    text-align: center;
+    padding: 0.55rem 1rem;
+    font-size: 0.875rem;
+    font-family: Georgia, serif;
+  }
 </style>
